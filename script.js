@@ -394,3 +394,104 @@ switch(color) {
     // en cualquier caso que no haya arriba
     console.log("no conozco el color indicado :(")
 }
+
+
+
+
+// LOOPS
+
+
+/* 
+
+for ( 
+  Declaración e Inicialización de la variable control;
+  Condicion para que el bucle continue o se detenga;
+  expresion final. Controla la frecuencia del loop;
+ ) {
+  El codigo que deba ocurrir X cantidad de veces
+}
+
+*/
+
+
+for (
+  let control = 0; // el control empieza en cero
+  control < 10; // el bucle continua mientras que el control sea menor a 10
+  control = control + 1 // cada vez que el codigo dentro del bucle se ejecuta, el control aumenta en 1
+) {
+
+  // 1. let control = 0; // ocurre una sola vez al inicio
+
+  // 2. if (control < 10) continua con el bucle, si es false, deten el bucle
+
+  console.log("bucle andando", control)
+
+
+  // 3. control = control + 1
+
+}
+
+
+
+for ( let i = 0; i < 20; i++  ) {
+  console.log("bucle más reducido sintaxicamente")
+}
+
+
+
+let lyrics = "Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world, Around the world"
+
+
+// buscar la cantidad de veces que se repite "Around the world"
+let verses = 0;
+
+for ( let i = 0; i < lyrics.length; i++ ) {
+  // console.log(i) // uso i como si fuese posición
+  if (lyrics[i] === ",") {
+    console.log("encontrada nueva repetición")
+    verses = verses + 1
+  }
+  
+  
+  
+}
+
+// quiero tener acceso a ese numero 22
+console.log(verses+1)
+
+
+
+// break y continue
+
+let string = "B?!*??!n!!*!n?!*?!? !w1!w??!k!o???o!!";
+
+// para desencriptar
+
+
+// 1. cambiar todas las "*" a "a"
+// 2. remover todos los "!" y "?"
+// 3. no tomar en cuenta todo lo que haya despues de " "
+
+
+let secretCode = "";
+
+
+for ( let i = 0; i < string.length; i++ ) {
+
+  let characterToAdd = string[i]
+
+  if (characterToAdd === "*") {
+    characterToAdd = "a"
+  } else if (characterToAdd === "!" || characterToAdd === "?") {
+    // characterToAdd = ""
+    continue; // deten esta iteración del bucle
+  } else if (characterToAdd === " ") {
+    break; // deten TODO el bucle
+  }
+
+  // console.log(string[i])
+  secretCode = secretCode + characterToAdd
+
+}
+
+console.log(secretCode)
